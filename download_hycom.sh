@@ -28,7 +28,7 @@ for PlusDay in `seq $StartSeq $EndSeq`; do  Tstart=`date -d "$YEAR-$MONTH-$DAY +
   TimeEnd="time_end=$Tend"
   for i in 1 2; do
   vertCoord="vertCoord=$i"
-  OutFile=$MODEL"_"$EXPT"_LEVEL"$i"_`echo $Tstart | cut -d 'T' -f 1`T00Z.nc"
+  OutFile=$MODEL"_"$Tstart"_"$EXPT"_LEVEL"$i"_`echo $Tstart | cut -d 'T' -f 1`T00Z.nc"
   rm $OutFile
   
   URL="$NCSS/$MODEL/$EXPT?$VARS&$SPATIAL&$NORTH&$SOUTH&$EAST&$WEST&$TimeStart&$TimeEnd&addLatLon=True&$vertCoord"
